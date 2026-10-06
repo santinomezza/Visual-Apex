@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+// Self-hosted fonts via @font-face (font-display: swap)
+// Satoshi Variable (wght 300-900)
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.jsdelivr.net/gh/fontshare/satoshi/fonts/webfonts/Satoshi-Variable.woff2') format('woff2-variations'),
+       url('https://cdn.jsdelivr.net/gh/fontshare/satoshi/fonts/webfonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// JetBrains Mono
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('https://cdn.jsdelivr.net/npm/@fontsource-variable/jetbrains-mono@5.0.0/files/jetbrains-mono-variable-wght@1..woff2') format('woff2-variations');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
   margin: 0;
@@ -7,7 +25,7 @@
 }
 
 html, body {
-  font-family: 'Inter', sans-serif;
+  font-family: $font-body;
   background-color: $bg-dark;
   background-image:
     linear-gradient(to right, $bg-grid 1px, transparent 1px),
@@ -17,40 +35,34 @@ html, body {
   color: $text-light;
   overflow-x: hidden;
   max-width: 100vw;
-  cursor: none;
+  cursor: default;
 }
 
-/* Custom Cursor Tracker */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: $primary-1;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background-color 0.2s, border 0.2s;
-
-  &.hovering {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border: 2px solid $primary-1;
+@media (max-width: 768px) {
+  html, body {
+    background-attachment: scroll;
   }
 }
 
-/* Disable Custom Cursor and Restore Defaults on Mobile */
-@media (max-width: 768px) {
-  .custom-cursor { display: none !important; }
-  body, a, button, .btn-primary, .btn-secondary, .btn-pricing { cursor: auto !important; }
+::selection {
+  background: rgba(0, 200, 83, 0.3);
+  color: $text-light;
 }
 
-a, button, .btn {
-  cursor: none;
+:focus-visible {
+  outline: 2px solid $primary-1;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 section {
@@ -64,26 +76,26 @@ section {
 }
 
 .logo {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid $card-border;
-  border-radius: 20px;
-  padding: 8px 16px;
-  color: $text-light;
+  font-family: $font-display;
   font-weight: 800;
-  letter-spacing: 1px;
+  font-size: 22px;
+  color: $text-light;
+  letter-spacing: -0.5px;
 }
 
-.h2secciones {
-  display: inline-block;
-  margin-bottom: 50px;
-  font-size: clamp(32px, 8vw, 48px);
+.section-title {
+  font-family: $font-display;
   font-weight: 800;
-  background: linear-gradient(90deg, #fff, $primary-1, #fff);
-  background-size: 200% auto;
-  animation: gradientPan 3s linear infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border: none;
-  padding: 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: $text-muted;
+  max-width: 65ch;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
 }

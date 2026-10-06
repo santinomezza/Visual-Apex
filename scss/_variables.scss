@@ -1,16 +1,50 @@
 // Paleta Premium (Grid & Neon Green)
-$bg-dark: #050505;          
-$bg-secondary: #0a0a0a;     
-$bg-grid: rgba(255, 255, 255, 0.04); 
+$bg-dark: #050505;
+$bg-secondary: #0a0a0a;
+$bg-tertiary: #141414;
+$bg-grid: rgba(255, 255, 255, 0.04);
 
-$card-bg: rgba(20, 20, 20, 0.6); 
+$card-bg: rgba(20, 20, 20, 0.6);
 $card-border: rgba(255, 255, 255, 0.08);
+$card-hover-border: rgba(0, 200, 83, 0.3);
 
-$primary-1: #00C853;        
-$primary-2: #38D400;        
+$primary-1: #00C853;
+$primary-2: #38D400;
 
 $primary-gradient: linear-gradient(135deg, $primary-1, $primary-2);
 
 $text-light: #F8F9FA;
 $text-muted: #8B949E;
+$text-dim: rgba(248, 249, 250, 0.5);
+
 $transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+// Tipografía
+$font-display: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-body: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+// Border radius system
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+
+// Shadows
+$shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+$shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+$shadow-glow: 0 0 30px rgba(0, 200, 83, 0.25);
+$shadow-glow-hover: 0 0 50px rgba(0, 200, 83, 0.4);
+
+// Breakpoints
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1536px;
+
+// Z-index scale
+$z-nav: 1000;
+$z-modal: 2000;
+$z-toast: 3000;
+$z-cursor: 9999;

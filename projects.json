@@ -1,0 +1,30 @@
+[
+  {
+    "name": "EL CAMION-CAT",
+    "description": "Empresa de maquinarias y equipos pesados",
+    "image": "assets/img/PROYECTO4.webp",
+    "tags": ["React", "Node.js", "E-commerce"],
+    "url": "https://santinomezza.github.io/CAMION-CAT/"
+  },
+  {
+    "name": "BAKO - Lifestyle",
+    "description": "Tienda online de gorras y accesorios urbanos",
+    "image": "assets/img/PROYECTO2.webp",
+    "tags": ["Shopify", "Liquid", "SEO"],
+    "url": "https://santinomezza.github.io/BAKO/"
+  },
+  {
+    "name": "404 FESTIVAL",
+    "description": "Agencia organizadora de eventos y festivales",
+    "image": "assets/img/PROYECTO1.webp",
+    "tags": ["Vue.js", "Firebase", "PWA"],
+    "url": "https://santinomezza.github.io/404.FESTIVAL/"
+  },
+  {
+    "name": "TRANSPORTE MEZZAVILLA",
+    "description": "Empresa de transporte y logística",
+    "image": "assets/img/PROYECTO5.webp",
+    "tags": ["WordPress", "WooCommerce", "API"],
+    "url": "https://santinomezza.github.io/TRANSPORTE-MEZZAVILLA/"
+  }
+]

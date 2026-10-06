@@ -1,40 +1,108 @@
 .contact {
   padding: 140px 0;
   text-align: center;
+  position: relative;
 
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 
   .section-title {
-    font-size: 42px;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #000, #00C853, #000);
-    background-size: 200% auto;
-    animation: gradientPan 3s linear infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
   .section-subtitle {
-    color: $text-muted;
-    margin-bottom: 50px;
-    font-size: 18px;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+
+    strong {
+      color: $text-light;
+    }
   }
 
   .btn-whatsapp {
-    display: inline-block;
-    padding: 18px 40px;
-    border-radius: 12px;
+    font-family: $font-body;
     font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.125rem 2.5rem;
+    border-radius: $radius-sm;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 0.02em;
     background: $primary-gradient;
     color: #000;
-    transition: 0.3s ease;
-    box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
+    transition: $transition-fast;
+    box-shadow: 0 4px 20px rgba(0, 200, 83, 0.3);
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 30px rgb(255, 255, 255);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 35px rgba(0, 200, 83, 0.5);
     }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .whatsapp-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// WhatsApp fixed float button (mobile only)
+.whatsapp-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 60px;
+  height: 60px;
+  background: $primary-gradient;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0, 200, 83, 0.4);
+  z-index: $z-nav - 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: $transition-fast;
+  text-decoration: none;
+
+  svg {
+    width: 28px;
+    height: 28px;
+    color: #000;
+  }
+
+  &:hover {
+    transform: translateY(0) scale(1.1);
+    box-shadow: 0 12px 40px rgba(0, 200, 83, 0.6);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (min-width: 769px) {
+    display: none !important;
+  }
+
+  @media (max-width: 768px) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }

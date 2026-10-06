@@ -19,222 +19,211 @@
 
 <body>
 
-  <div class="custom-cursor"></div>
-
-  <header class="navbar">
-    <div class="logo">Visual Apex</div>
-    <div class="hamburger" id="hamburger">
+  <header class="navbar" role="banner">
+    <div class="logo" aria-label="Visual Apex - Inicio">Visual Apex</div>
+    <div class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <nav class="nav-links" id="nav-links">
+    <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navegación principal">
       <a href="#servicios">Servicios</a>
       <a href="#proceso">Proceso</a>
       <a href="#paquetes">Paquetes</a>
       <a href="#proyectos">Proyectos</a>
-      <a href="#contacto" class="btn-contacto">Contacto</a>
+      <a href="#contacto" class="btn-contacto">Empezar proyecto</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="typewriter" data-text="Desarrollo Web - Marketing Digital">Desarrollo Web - Marketing Digital</h1>
-      <p>Desarrollo premium para tiendas online que buscan escalar sin límites. Arquitectura moderna, diseño UX y
-        conversiones increíbles.</p>
-      <div class="hero-buttons">
-        <a href="#contacto" class="btn-primary">Empezar Proyecto</a>
-        <a href="#proyectos" class="btn-secondary">Ver Proyectos</a>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Agencia de desarrollo para e-commerce</p>
+        <h1 id="hero-title" class="hero-title">Tiendas online que <span class="highlight">venden sin fricción</span></h1>
+        <p class="hero-subtitle">Arquitectura performante, UX orientada a conversión y escalabilidad real. Sin plantillas, sin excusas.</p>
+        <div class="hero-ctas">
+          <a href="#contacto" class="btn btn-primary">Empezar proyecto</a>
+          <a href="#proyectos" class="btn btn-secondary">Ver proyectos</a>
+        </div>
+        <div class="hero-trust">
+          <span class="trust-label">Con la confianza de</span>
+          <div class="trust-logos" aria-hidden="true">
+            <svg class="trust-logo" viewBox="0 0 120 40" aria-label="Shopify"><text x="60" y="28" text-anchor="middle" font-family="Satoshi" font-weight="700" font-size="16" fill="currentColor">Shopify</text></svg>
+            <svg class="trust-logo" viewBox="0 0 120 40" aria-label="Vercel"><text x="60" y="28" text-anchor="middle" font-family="Satoshi" font-weight="700" font-size="16" fill="currentColor">Vercel</text></svg>
+            <svg class="trust-logo" viewBox="0 0 120 40" aria-label="Stripe"><text x="60" y="28" text-anchor="middle" font-family="Satoshi" font-weight="700" font-size="16" fill="currentColor">Stripe</text></svg>
+            <svg class="trust-logo" viewBox="0 0 120 40" aria-label="Figma"><text x="60" y="28" text-anchor="middle" font-family="Satoshi" font-weight="700" font-size="16" fill="currentColor">Figma</text></svg>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="visual-card">
+          <div class="visual-card-header">
+            <div class="window-dots">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="visual-card-content">
+            <div class="code-lines">
+              <div class="code-line"><span class="code-keyword">const</span> store = <span class="code-function">createStore</span>({</div>
+              <div class="code-line indent">  <span class="code-property">performance</span>: <span class="code-string">'98/100'</span>,</div>
+              <div class="code-line indent">  <span class="code-property">conversion</span>: <span class="code-string">'+47%</span>,</div>
+              <div class="code-line indent">  <span class="code-property">lcp</span>: <span class="code-string">'1.2s'</span>,</div>
+              <div class="code-line indent">  <span class="code-property">ttfb</span>: <span class="code-string">'48ms'</span>,</div>
+              <div class="code-line">});</div>
+            </div>
+            <div class="metrics-preview">
+              <div class="metric">
+                <span class="metric-value" data-target="98">0</span><span class="metric-suffix">/100</span>
+                <span class="metric-label">Performance</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value" data-target="47">0</span><span class="metric-suffix">%</span>
+                <span class="metric-label">Conversión</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value" data-target="1200">0</span><span class="metric-suffix">ms</span>
+                <span class="metric-label">LCP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-overlay"></div>
       </div>
     </div>
   </section>
 
   <section id="servicios" class="services reveal-left">
-    <h2 class="h2secciones typewriter" data-text="Servicios">Servicios</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Marketing Digital</h3>
-        <p>Presencia digital optimizada para crecer.</p>
-      </div>
-      <div class="card">
-        <h3>Desarrollo Web</h3>
-        <p>Arquitectura optimizada y rápida.</p>
-      </div>
-      <div class="card">
-        <h3>UX Estratégico</h3>
-        <p>Experiencias enfocadas en conversión.</p>
-      </div>
-      <div class="card">
-        <h3>Escalabilidad</h3>
-        <p>Preparado para crecer sin límites.</p>
-      </div>
-      <div class="card">
-        <h3>Mantenimiento</h3>
-        <p>Soporte técnico y actualizaciones continuas.</p>
-      </div>
-      <div class="card">
-        <h3>Soporte Personalizado</h3>
-        <p>Atención personalizada para resolver tus dudas.</p>
+    <div class="container">
+      <h2 class="section-title">Servicios</h2>
+      <p class="section-subtitle">Soluciones técnicas para tiendas online que necesitan rendir, no solo verse bien.</p>
+      <div class="services-grid">
+        <!-- Servicios se renderizan via JS o se mantienen estáticos -->
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Desarrollo Web</h3>
+          <p>Arquitectura headless, performance 90+ Lighthouse, stack moderno (Next.js, Astro, Shopify Hydrogen).</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>CRO & UX Estratégico</h3>
+          <p>Investigación, testing A/B, mapas de calor y rediseño de funnels para maximizar ingresos por visitante.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Migración & Escalabilidad</h3>
+          <p>De Shopify/WooCommerce a headless, infra cloud-native, zero-downtime deployments, multi-region.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          </div>
+          <h3>SEO Técnico & Core Web Vitals</h3>
+          <p>Auditoría completa, schema markup, optimización de rendering, LCP < 1.2s, CLS < 0.1.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Mantenimiento Continuo</h3>
+          <p>Monitoreo 24/7, actualizaciones de seguridad, backups automatizados, SLA de respuesta < 4h.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Equipo Fraccional</h3>
+          <p>Devs senior, UX lead y CRO specialist a tiempo parcial. Coste fracción de agencia tradicional.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="proceso" class="process reveal-right">
     <div class="container">
-      <h2 class="section-title  typewriter" data-text="Nuestro Proceso">Nuestro Proceso</h2>
-      <p class="section-subtitle">
-        Metodología enfocada en performance, escalabilidad y conversión.
-      </p>
+      <h2 class="section-title">Proceso</h2>
+      <p class="section-subtitle">Cuatro fases, cero improvisación. Cada entrega valida la siguiente.</p>
 
-      <div class="process-grid">
-        <div class="process-card">
-          <div class="step">01</div>
-          <h3>Estrategia</h3>
-          <p>Analizamos tu modelo de negocio y definimos arquitectura y objetivos.</p>
-        </div>
+      <div class="process-timeline">
+        <article class="process-step">
+          <div class="step-marker" aria-hidden="true">
+            <span class="step-number">01</span>
+            <span class="step-dot"></span>
+          </div>
+          <div class="step-content">
+            <h3>Estrategia & Discovery</h3>
+            <p>Auditoría técnica, análisis de competencia, definición de KPIs y arquitectura de la solución.</p>
+            <ul class="step-deliverables">
+              <li>Informe de auditoría</li>
+              <li>Arquitectura técnica</li>
+              <li>Roadmap priorizado</li>
+            </ul>
+          </div>
+        </article>
 
-        <div class="process-card">
-          <div class="step">02</div>
-          <h3>Diseño UX</h3>
-          <p>Diseñamos experiencias enfocadas en conversión y usabilidad.</p>
-        </div>
+        <article class="process-step">
+          <div class="step-marker" aria-hidden="true">
+            <span class="step-number">02</span>
+            <span class="step-dot"></span>
+          </div>
+          <div class="step-content">
+            <h3>Diseño UX & UI System</h3>
+            <p>Wireframes, prototipos interactivos, design system componentizado y validación con usuarios reales.</p>
+            <ul class="step-deliverables">
+              <li>Design System (Figma)</li>
+              <li>Prototipo navegable</li>
+              <li>Specs de desarrollo</li>
+            </ul>
+          </div>
+        </article>
 
-        <div class="process-card">
-          <div class="step">03</div>
-          <h3>Desarrollo</h3>
-          <p>Construimos una tienda optimizada, rápida y escalable.</p>
-        </div>
+        <article class="process-step">
+          <div class="step-marker" aria-hidden="true">
+            <span class="step-number">03</span>
+            <span class="step-dot"></span>
+          </div>
+          <div class="step-content">
+            <h3>Desarrollo & QA</h3>
+            <p>Implementación en sprints de 2 semanas, code review obligatorio, testing automatizado y staging continuo.</p>
+            <ul class="step-deliverables">
+              <li>Código en repo privado</li>
+              <li>Cobertura tests > 80%</li>
+              <li>Entorno staging funcional</li>
+            </ul>
+          </div>
+        </article>
 
-        <div class="process-card">
-          <div class="step">04</div>
-          <h3>Lanzamiento</h3>
-          <p>Deploy, optimización y acompañamiento para escalar ventas.</p>
-        </div>
+        <article class="process-step">
+          <div class="step-marker" aria-hidden="true">
+            <span class="step-number">04</span>
+            <span class="step-dot"></span>
+          </div>
+          <div class="step-content">
+            <h3>Lanzamiento & Crecimiento</h3>
+            <p>Deploy production, migración SEO-safe, monitoreo post-lanzamiento y plan de optimización continua.</p>
+            <ul class="step-deliverables">
+              <li>Go-live zero-downtime</li>
+              <li>Dashboard de métricas</li>
+              <li>Plan 90 días post-launch</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="proyectos" class="projects reveal-right">
     <div class="container">
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-subtitle">Desarrollos full-stack enfocados en performance, UX y escalabilidad.</p>
 
-      <h2 class="section-title-p titulo-p typewriter" data-text="Nuestros Proyectos">Nuestros Proyectos</h2>
-      <p class="section-subtitle-p subititulo-p">
-        Algunos desarrollos enfocados en performance y conversión.
-      </p>
-
-      <div class="marquee-wrapper">
-        <div class="marquee-content">
-          <div class="project-card">
-            <div class="project-image">
-              <img loading="lazy" src="assets/img/PROYECTO4.webp" alt="Proyecto 1">
-            </div>
-            <div class="project-info">
-              <h3>EL CAMION-CAT</h3>
-              <p>Empresa de maquinarias</p>
-              <a href="https://santinomezza.github.io/CAMION-CAT/" class="project-btn">Ver proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image">
-              <img loading="lazy" src="assets/img/PROYECTO2.webp" alt="Proyecto 2">
-            </div>
-            <div class="project-info">
-              <h3>BAKO - Lifestyle</h3>
-              <p>Tienda Online de gorras</p>
-              <a href="https://santinomezza.github.io/BAKO/" class="project-btn">Ver proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image">
-              <img loading="lazy" src="assets/img/PROYECTO1.webp" alt="Proyecto 3">
-            </div>
-            <div class="project-info">
-              <h3>404 FESTIVAL</h3>
-              <p>Agencia Organizadora de eventos</p>
-              <a href="https://santinomezza.github.io/404.FESTIVAL/" class="project-btn">Ver proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image">
-              <img loading="lazy" src="assets/img/PROYECTO5.webp" alt="Proyecto 3">
-            </div>
-            <div class="project-info">
-              <h3>TRANSPORTE MEZZAVILLA</h3>
-              <p>Empresa de transporte</p>
-              <a href="https://santinomezza.github.io/TRANSPORTE-MEZZAVILLA/" class="project-btn">Ver proyecto</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="marquee-content" aria-hidden="true">
-          <div class="project-card">
-            <div class="project-image"><img loading="lazy" src="assets/img/PROYECTO4.webp" alt="Proyecto 1"></div>
-            <div class="project-info">
-              <h3>EL CAMION-CAT</h3>
-              <p>Empresa de maquinarias</p><a href="https://santinomezza.github.io/CAMION-CAT/" class="project-btn">Ver
-                proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image"><img loading="lazy" src="assets/img/PROYECTO2.webp" alt="Proyecto 2"></div>
-            <div class="project-info">
-              <h3>BAKO - Lifestyle</h3>
-              <p>Tienda Online de gorras</p><a href="https://santinomezza.github.io/BAKO/" class="project-btn">Ver
-                proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image"><img loading="lazy" src="assets/img/PROYECTO1.webp" alt="Proyecto 3"></div>
-            <div class="project-info">
-              <h3>404 FESTIVAL</h3>
-              <p>Agencia Organizadora de eventos</p><a href="https://santinomezza.github.io/404.FESTIVAL/"
-                class="project-btn">Ver proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image"><img loading="lazy" src="assets/img/PROYECTO5.webp" alt="Proyecto 3"></div>
-            <div class="project-info">
-              <h3>TRANSPORTE MEZZAVILLA</h3>
-              <p>Empresa de transporte</p><a href="https://santinomezza.github.io/TRANSPORTE-MEZZAVILLA/"
-                class="project-btn">Ver proyecto</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="marquee-content" aria-hidden="true">
-          <div class="project-card">
-            <div class="project-image"><img loading="lazy" src="assets/img/PROYECTO4.webp" alt="Proyecto 1"></div>
-            <div class="project-info">
-              <h3>EL CAMION-CAT</h3>
-              <p>Empresa de maquinarias</p><a href="https://santinomezza.github.io/CAMION-CAT/" class="project-btn">Ver
-                proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image"><img loading="lazy" src="assets/img/PROYECTO2.webp" alt="Proyecto 2"></div>
-            <div class="project-info">
-              <h3>BAKO - Lifestyle</h3>
-              <p>Tienda Online de gorras</p><a href="https://santinomezza.github.io/BAKO/" class="project-btn">Ver
-                proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image"><img loading="lazy" src="assets/img/PROYECTO1.webp" alt="Proyecto 3"></div>
-            <div class="project-info">
-              <h3>404 FESTIVAL</h3>
-              <p>Agencia Organizadora de eventos</p><a href="https://santinomezza.github.io/404.FESTIVAL/"
-                class="project-btn">Ver proyecto</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-image"><img loading="lazy" src="assets/img/PROYECTO5.webp" alt="Proyecto 3"></div>
-            <div class="project-info">
-              <h3>TRANSPORTE MEZZAVILLA</h3>
-              <p>Empresa de transporte</p><a href="https://santinomezza.github.io/TRANSPORTE-MEZZAVILLA/"
-                class="project-btn">Ver proyecto</a>
-            </div>
-          </div>
-        </div>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Proyectos se cargan dinámicamente desde projects.json -->
       </div>
 
     </div>
@@ -242,20 +231,20 @@
 
   <section id="paquetes" class="pricing reveal-left">
     <div class="container">
-      <h2 class="section-title">Servicios Digitales</h2>
-      <p class="section-subtitle">Soluciones a medida para escalar tu negocio digital al siguiente nivel.</p>
+      <h2 class="section-title">Paquetes</h2>
+      <p class="section-subtitle">Precios transparentes, sin sorpresas. Eliges lo que necesitas, escalas cuando quieras.</p>
 
       <div class="pricing-grid">
         <!-- Pack Starter (Web) -->
-        <div class="pricing-card">
-          <div class="pack-header">
+        <article class="pricing-card">
+          <header class="pack-header">
             <h3 class="pack-name">Starter</h3>
             <span class="pack-type">Solo Web</span>
             <div class="price-box">
               <div class="main-price">USD 150-250 <span>/ web</span></div>
               <div class="sub-price">Mantenimiento: USD 20-40/mes</div>
             </div>
-          </div>
+          </header>
           <ul class="features">
             <li>Landing page</li>
             <li>Botón de WhatsApp</li>
@@ -263,18 +252,18 @@
             <li>Mantenimiento básico</li>
           </ul>
           <a href="#contacto" class="btn-pricing secondary">Seleccionar Plan</a>
-        </div>
+        </article>
 
         <!-- Pack Solo Web -->
-        <div class="pricing-card">
-          <div class="pack-header">
+        <article class="pricing-card">
+          <header class="pack-header">
             <h3 class="pack-name">Web Full</h3>
             <span class="pack-type">Solo Web</span>
             <div class="price-box">
               <div class="main-price">USD 300-450 <span>/ web</span></div>
               <div class="sub-price">Mantenimiento: USD 40-70/mes</div>
             </div>
-          </div>
+          </header>
           <ul class="features">
             <li>Web hasta 5 secciones</li>
             <li>SEO básico</li>
@@ -282,11 +271,11 @@
             <li>Mantenimiento opcional</li>
           </ul>
           <a href="#contacto" class="btn-pricing secondary">Seleccionar Plan</a>
-        </div>
+        </article>
 
         <!-- Pack Pro (Popular) -->
-        <div class="pricing-card popular">
-          <div class="pack-header">
+        <article class="pricing-card popular">
+          <header class="pack-header">
             <h3 class="pack-name">Pro</h3>
             <span class="pack-type">Web + Redes</span>
             <div class="price-box">
@@ -294,7 +283,7 @@
               <div class="sub-price redes-price">Redes: USD 120-200/mes</div>
               <div class="sub-price">Mantenimiento: USD 40-70/mes</div>
             </div>
-          </div>
+          </header>
           <ul class="features">
             <li>Web hasta 5 secciones</li>
             <li>SEO básico + formulario de contacto</li>
@@ -302,11 +291,11 @@
             <li>Mantenimiento web nivel medio</li>
           </ul>
           <a href="#contacto" class="btn-pricing primary">Elegir Más Elegido</a>
-        </div>
+        </article>
 
         <!-- Pack Business -->
-        <div class="pricing-card">
-          <div class="pack-header">
+        <article class="pricing-card">
+          <header class="pack-header">
             <h3 class="pack-name">Business</h3>
             <span class="pack-type">Web + Redes Avanzado</span>
             <div class="price-box">
@@ -314,7 +303,7 @@
               <div class="sub-price redes-price">Redes: USD 200-350/mes</div>
               <div class="sub-price">Mantenimiento: USD 70-120/mes</div>
             </div>
-          </div>
+          </header>
           <ul class="features">
             <li>Todo lo del Pack Pro</li>
             <li>Integración de Blog optimizado</li>
@@ -322,18 +311,18 @@
             <li>Mantenimiento web avanzado y seguro</li>
           </ul>
           <a href="#contacto" class="btn-pricing secondary">Seleccionar Plan</a>
-        </div>
+        </article>
 
         <!-- Pack Solo Redes -->
-        <div class="pricing-card">
-          <div class="pack-header">
+        <article class="pricing-card">
+          <header class="pack-header">
             <h3 class="pack-name">Solo Redes</h3>
             <span class="pack-type">Social Media Management</span>
             <div class="price-box">
               <div class="main-price">USD 180-350 <span>/ mes</span></div>
               <div class="sub-price">Diseño + redacción incluidos</div>
             </div>
-          </div>
+          </header>
           <ul class="features">
             <li>12 posteos mensuales</li>
             <li>Diseño gráfico premium</li>
@@ -341,7 +330,7 @@
             <li>Calendario y estrategia mensual</li>
           </ul>
           <a href="#contacto" class="btn-pricing secondary">Seleccionar Plan</a>
-        </div>
+        </article>
       </div>
 
       <!-- Servicio Extra -->
@@ -361,28 +350,25 @@
 
   <section id="contacto" class="contact reveal-left">
     <div class="container">
-      <h2 class="section-title typewriter" data-text="Hablemos de tu proyecto"></h2>
-      <p class="section-subtitle">
-        Potenciemos tu ecommerce con una solución estratégica y escalable.
-      </p>
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-subtitle">Hablemos de tu proyecto. Respuesta en <strong>< 24h</strong>.</p>
 
-      <a href="https://wa.me/3834340335?text=Hola,%20quiero%20asesorarme%20sobre%20mi%20tienda%20online" target="_blank"
-        class="btn-whatsapp">
-        Asesorate
+      <a href="https://wa.me/3834340335?text=Hola,%20quiero%20asesorarme%20sobre%20mi%20tienda%20online" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.476-1.653-1.688-.173-.213-.012-.358.13-.358.149 0 .298.047.448.198.149.15.3.447.5.967.199.518.497 1.165.693 1.475.198.31.376.614.497.82.12.207.167.376.098.527-.07.149-.637 1.542-.877 1.977-.24.435-.51.764-.813 1.012-.304.248-.717.476-1.192.476-.572 0-1.29-.528-1.504-.733-.214-.205-.52-.582-.857-.902-.337-.32-.377-.457-.397-.488-.02-.03-.08-.112-.132-.177-.05-.065-.27-.222-.488-.488-.22-.27-.337-.405-.397-.55-.06-.144-.043-.257.037-.347.18-.207.57-.612.934-.878.363-.266.75-.437 1.14-.437.25 0 .46.05.61.075.15.025.307.06.46.13.15.07.304.186.44.317.146.143.247.328.297.5.05.17-.007.348-.107.457-.222.245-.735.906-1.11 1.735-.377.83-.56 1.334-.725 1.51-.205.215-.39.358-.577.467-.188.11-.377.17-.567.17-.16 0-.32-.012-.48-.037a1.72 1.72 0 0 1-1.22-.49l-.624-.41-.623-.41c-.333-.222-.54-.39-.72-.5-.18-.11-.35-.19-.52-.22-.17-.03-.34-.03-.51-.03-.18 0-.36.01-.53.045-.17.047-.33.1-.5.15-.17.05-.33.116-.5.15-.17.034-.46.225-.74.56-.28.335-.457.71-.493.857-.036.148.015.31.075.432.188.376.607.964 1.41 1.857.39.427.773.765 1.12 1.04.347.275.68.522 1.02.75.34.227.692.437 1.046.62.353.183.722.327 1.09.427.368.099.74.167 1.106.198.366.03.733.017 1.09-.068.36-.085.71-.213 1.046-.432.337-.222.607-.487.84-.777.233-.29.435-.64.59-.974.155-.333.28-.678.36-1.02.08-.34.12-.695.12-1.056 0-.36-.04-.71-.13-.98z"/></svg>
+        <span>Empezar proyecto por WhatsApp</span>
       </a>
     </div>
+    <!-- WhatsApp fixed en móvil -->
+    <a href="https://wa.me/3834340335?text=Hola,%20quiero%20asesorarme%20sobre%20mi%20tienda%20online" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.476-1.653-1.688-.173-.213-.012-.358.13-.358.149 0 .298.047.448.198.149.15.3.447.5.967.199.518.497 1.165.693 1.475.198.31.376.614.497.82.12.207.167.376.098.527-.07.149-.637 1.542-.877 1.977-.24.435-.51.764-.813 1.012-.304.248-.717.476-1.192.476-.572 0-1.29-.528-1.504-.733-.214-.205-.52-.582-.857-.902-.337-.32-.377-.457-.397-.488-.02-.03-.08-.112-.132-.177-.05-.065-.27-.222-.488-.488-.22-.27-.337-.405-.397-.55-.06-.144-.043-.257.037-.347.18-.207.57-.612.934-.878.363-.266.75-.437 1.14-.437.25 0 .46.05.61.075.15.025.307.06.46.13.15.07.304.186.44.317.146.143.247.328.297.5.05.17-.007.348-.107.457-.222.245-.735.906-1.11 1.735-.377.83-.56 1.334-.725 1.51-.205.215-.39.358-.577.467-.188.11-.377.17-.567.17-.16 0-.32-.012-.48-.037a1.72 1.72 0 0 1-1.22-.49l-.624-.41-.623-.41c-.333-.222-.54-.39-.72-.5-.18-.11-.35-.19-.52-.22-.17-.03-.34-.03-.51-.03-.18 0-.36.01-.53.045-.17.047-.33.1-.5.15-.17.05-.33.116-.5.15-.17.034-.46.225-.74.56-.28.335-.457.71-.493.857-.036.148.015.31.075.432.188.376.607.964 1.41 1.857.39.427.773.765 1.12 1.04.347.275.68.522 1.02.75.34.227.692.437 1.02.75.34.227.68.522 1.02.75.34.227.692.437 1.046.62.353.183.722.327 1.09.427.368.099.74.167 1.106.198.366.03.733.017 1.09-.068.36-.085.71-.213 1.046-.432.337-.222.607-.487.84-.777.233-.29.435-.64.59-.974.155-.333.28-.678.36-1.02.08-.34.12-.695.12-1.056 0-.36-.04-.71-.13-.98z"/></svg>
+    </a>
   </section>
 
   <section id="nosotros" class="about reveal-left">
     <div class="container about-container">
-
       <div class="about-text">
-        <h2 class="about-title typewriter" data-text="Sobre Nosotros">Sobre Nosotros</h2>
-        <p class="about-description">
-          Somos un equipo enfocado en desarrollo digital orientado a performance.
-          Diseñamos experiencias optimizadas, rápidas y escalables para marcas
-          que buscan crecimiento real.
-        </p>
+        <h2 class="section-title">Nosotros</h2>
+        <p class="section-subtitle">Somos un equipo enfocado en desarrollo digital orientado a performance. Diseñamos experiencias optimizadas, rápidas y escalables para marcas que buscan crecimiento real.</p>
 
         <div class="about-stats">
           <div class="stat">
@@ -403,7 +389,6 @@
       <div class="about-visual">
         <div class="about-box"></div>
       </div>
-
     </div>
   </section>
 
@@ -414,7 +399,7 @@
     <div class="footer-container">
 
       <div class="footer-brand">
-        <h3 class="typewriter" data-text="Visual Apex"></h3>
+        <h3>Visual Apex</h3>
         <p>Desarrollo ecommerce estratégico y escalable.</p>
       </div>
 
@@ -443,30 +428,6 @@
 
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-      const elements = document.querySelectorAll(".typewriter");
-
-      elements.forEach((element) => {
-        const text = element.getAttribute("data-text");
-        element.textContent = "";
-        let index = 0;
-        const speed = 60;
-
-        function typeEffect() {
-          if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeEffect, speed);
-          }
-        }
-
-        typeEffect();
-      });
-
-    });
-  </script>
   <script src="js/scroll-animations.js"></script>
 </body>
 

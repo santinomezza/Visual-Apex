@@ -2,7 +2,7 @@
 @import "base";
 @import "navbar";
 @import "hero";
-@import "cards";
+@import "services";
 @import "animations";
 @import "mixins";
 @import "proces";
@@ -15,24 +15,39 @@
 .reveal-left,
 .reveal-right {
   opacity: 0;
+  transform: translateY(40px);
   transition: transform 0.8s cubic-bezier(.22,1,.36,1),
               opacity 0.6s ease;
 }
 
 .reveal-left {
-  transform: translateX(-80px);
+  transform: translateX(-60px) translateY(40px);
 }
 
 .reveal-right {
-  transform: translateX(80px);
+  transform: translateX(60px) translateY(40px);
 }
 
 .reveal-active {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

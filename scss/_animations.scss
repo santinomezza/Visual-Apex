@@ -20,16 +20,10 @@
   }
 }
 
-.typewriter {
-  font-size: 42px;
-  font-weight: 800;
-  white-space: pre-wrap;
-  overflow: hidden;
-  display: inline-block;
-  padding-right: 4px;
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
 }
-
-
 
 @keyframes gradientPan {
   0% {
@@ -56,5 +50,41 @@
 
   100% {
     box-shadow: 0 0 15px rgba(0, 200, 83, 0.4);
+  }
+}
+
+// Hero-specific animations
+.hero-title {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-subtitle {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+.hero-ctas {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.hero-trust {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  opacity: 0;
+}
+
+.visual-card {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-subtitle,
+  .hero-ctas,
+  .hero-trust,
+  .visual-card {
+    animation: none;
+    opacity: 1;
   }
 }
