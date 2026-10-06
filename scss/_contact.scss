@@ -23,36 +23,100 @@
       color: $text-light;
     }
   }
+}
 
-  .btn-whatsapp {
-    font-family: $font-body;
-    font-weight: 600;
+.cotizacion-form {
+  text-align: left;
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      font-family: $font-display;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: $text-light;
+      margin-bottom: 0.5rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: rgba(20, 20, 20, 0.6);
+      border: 1px solid $card-border;
+      border-radius: $radius-sm;
+      color: $text-light;
+      font-family: $font-body;
+      font-size: 0.9375rem;
+      transition: $transition-fast;
+      outline: none;
+
+      &:focus {
+        border-color: $primary-1;
+        box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.15);
+      }
+
+      &::placeholder {
+        color: rgba(248, 249, 250, 0.35);
+      }
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300C853' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+
+  .honeypot {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 1.125rem;
     font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.125rem 2.5rem;
-    border-radius: $radius-sm;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    background: $primary-gradient;
-    color: #000;
-    transition: $transition-fast;
-    box-shadow: 0 4px 20px rgba(0, 200, 83, 0.3);
+    margin-top: 0.5rem;
+  }
 
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 35px rgba(0, 200, 83, 0.5);
+  .form-success {
+    text-align: center;
+    padding: 2rem 0;
+
+    h3 {
+      font-family: $font-display;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: $text-light;
+      margin-bottom: 1rem;
     }
 
-    &:active {
-      transform: scale(0.98);
-    }
-
-    .whatsapp-icon {
-      width: 24px;
-      height: 24px;
-      flex-shrink: 0;
+    p {
+      color: $text-muted;
+      margin-bottom: 1.5rem;
     }
   }
 }

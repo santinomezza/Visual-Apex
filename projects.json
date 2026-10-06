@@ -1,30 +1,30 @@
 [
   {
     "name": "EL CAMION-CAT",
-    "description": "Empresa de maquinarias y equipos pesados",
+    "description": "Sistema de gestión integral para empresa de maquinarias y equipos pesados: catálogo técnico, cotizador online, portal de clientes y stock en tiempo real.",
     "image": "assets/img/PROYECTO4.webp",
-    "tags": ["React", "Node.js", "E-commerce"],
+    "tags": ["Node.js", "React", "PostgreSQL", "Docker"],
     "url": "https://santinomezza.github.io/CAMION-CAT/"
   },
   {
     "name": "BAKO - Lifestyle",
-    "description": "Tienda online de gorras y accesorios urbanos",
+    "description": "Plataforma e-commerce a medida para marca de indumentaria: checkout propio, sincronización ERP, gestión de variantes complejas y programa de fidelización.",
     "image": "assets/img/PROYECTO2.webp",
-    "tags": ["Shopify", "Liquid", "SEO"],
+    "tags": ["TypeScript", "Next.js", "GraphQL", "Redis"],
     "url": "https://santinomezza.github.io/BAKO/"
   },
   {
     "name": "404 FESTIVAL",
-    "description": "Agencia organizadora de eventos y festivales",
+    "description": "Sistema de ticketing y gestión de eventos para productora: venta online, control de acceso QR, dashboards de ventas en tiempo real y reportes automatizados.",
     "image": "assets/img/PROYECTO1.webp",
-    "tags": ["Vue.js", "Firebase", "PWA"],
+    "tags": ["Vue.js", "Firebase", "PWA", "Cloud Functions"],
     "url": "https://santinomezza.github.io/404.FESTIVAL/"
   },
   {
     "name": "TRANSPORTE MEZZAVILLA",
-    "description": "Empresa de transporte y logística",
+    "description": "Plataforma logística para empresa de transporte: tracking GPS de flota, despacho automático, liquidación de choferes y portal de clientes con seguimiento.",
     "image": "assets/img/PROYECTO5.webp",
-    "tags": ["WordPress", "WooCommerce", "API"],
+    "tags": ["Go", "React Native", "PostgreSQL", "WebSockets"],
     "url": "https://santinomezza.github.io/TRANSPORTE-MEZZAVILLA/"
   }
 ]

@@ -2,6 +2,129 @@ document.addEventListener("DOMContentLoaded", function () {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ========================
+  // FORM CONFIG (COMPLETAR)
+  // ========================
+  // Reemplazar "COMPLETAR" por la URL del endpoint.
+  // Ejemplos:
+  // - Web3Forms: https://api.web3forms.com/submit/{YOUR_ACCESS_KEY}
+  // - Formspree: https://formspree.io/f/{FORM_ID}
+  // - n8n webhook: https://tu-dominio.com/webhook/{path}
+  // La clave/URL va SOLO en esta variable. No hardcodear claves en el HTML.
+  const FORM_ENDPOINT = "COMPLETAR"; // Web3Forms / Formspree / n8n webhook
+  const FORM_FIELDS = {
+    nombre: "[name='nombre']",
+    empresa: "[name='empresa']",
+    email: "[name='email']",
+    whatsapp: "[name='whatsapp']",
+    tipo: "[name='tipo']",
+    mensaje: "[name='mensaje']",
+    plazo: "[name='plazo']",
+    honeypot: "[name='website']"
+  };
+
+  // ========================
+  // FORM HANDLER
+  // ========================
+  function showFormError(message, waText) {
+    const form = document.getElementById("cotizacion-form");
+    if (!form) return;
+    const encoded = encodeURIComponent(waText || "Hola, quiero consultar por un proyecto");
+    form.innerHTML = `
+      <div class="form-error" role="alert" style="text-align:center;padding:2rem 0;">
+        <h3>No se pudo enviar el formulario</h3>
+        <p>${message}</p>
+        <a href="https://wa.me/3834340335?text=${encoded}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Enviar por WhatsApp</a>
+      </div>
+    `;
+  }
+
+  function initForm() {
+    const form = document.getElementById("cotizacion-form");
+    if (!form) return;
+
+    if (FORM_ENDPOINT === "COMPLETAR") {
+      const waBase = "Hola, quiero consultar por un proyecto";
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = {
+          nombre: form.querySelector(FORM_FIELDS.nombre)?.value || "",
+          empresa: form.querySelector(FORM_FIELDS.empresa)?.value || "",
+          email: form.querySelector(FORM_FIELDS.email)?.value || "",
+          whatsapp: form.querySelector(FORM_FIELDS.whatsapp)?.value || "",
+          tipo: form.querySelector(FORM_FIELDS.tipo)?.value || "",
+          mensaje: form.querySelector(FORM_FIELDS.mensaje)?.value || "",
+          plazo: form.querySelector(FORM_FIELDS.plazo)?.value || ""
+        };
+        const lines = [
+          `Nombre: ${data.nombre}`,
+          data.empresa ? `Empresa/rubro: ${data.empresa}` : "",
+          data.email ? `Email: ${data.email}` : "",
+          data.whatsapp ? `WhatsApp: ${data.whatsapp}` : "",
+          data.tipo ? `Tipo: ${data.tipo}` : "",
+          data.mensaje ? `Mensaje: ${data.mensaje}` : "",
+          data.plazo ? `Plazo: ${data.plazo}` : ""
+        ].filter(Boolean).join("\n");
+        const waText = encodeURIComponent(lines);
+        showFormError("Completá el endpoint del formulario en el código. Mientras tanto, podés enviarme tu consulta por WhatsApp:", `Hola,%20${waText}`);
+      });
+      return;
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = "Enviando...";
+      btn.disabled = true;
+
+      const data = {
+        nombre: form.querySelector(FORM_FIELDS.nombre)?.value || "",
+        empresa: form.querySelector(FORM_FIELDS.empresa)?.value || "",
+        email: form.querySelector(FORM_FIELDS.email)?.value || "",
+        whatsapp: form.querySelector(FORM_FIELDS.whatsapp)?.value || "",
+        tipo: form.querySelector(FORM_FIELDS.tipo)?.value || "",
+        mensaje: form.querySelector(FORM_FIELDS.mensaje)?.value || "",
+        plazo: form.querySelector(FORM_FIELDS.plazo)?.value || ""
+      };
+
+      try {
+        const response = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          form.innerHTML = `
+            <div class="form-success" style="text-align:center;padding:2rem 0;">
+              <h3>Recibimos tu consulta</h3>
+              <p>Te respondo personalmente en menos de 24 horas. Mientras tanto, podés escribirme por WhatsApp:</p>
+              <a href="https://wa.me/3834340335?text=Hola,%20envi%C3%A9%20el%20formulario%20de%20cotizaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Consultar por WhatsApp</a>
+            </div>
+          `;
+        } else {
+          throw new Error(`HTTP ${response.status}`);
+        }
+      } catch (error) {
+        console.error("Form error:", error);
+        const lines = [
+          `Nombre: ${data.nombre}`,
+          data.empresa ? `Empresa/rubro: ${data.empresa}` : "",
+          data.email ? `Email: ${data.email}` : "",
+          data.whatsapp ? `WhatsApp: ${data.whatsapp}` : "",
+          data.tipo ? `Tipo: ${data.tipo}` : "",
+          data.mensaje ? `Mensaje: ${data.mensaje}` : "",
+          data.plazo ? `Plazo: ${data.plazo}` : ""
+        ].filter(Boolean).join("\n");
+        showFormError("Hubo un error al enviar el formulario. Por favor, escribime por WhatsApp.", `Hola,%20${encodeURIComponent(lines)}`);
+      }
+    });
+  }
+
+  initForm();
+
+  // ========================
   // REVEAL ON SCROLL (IntersectionObserver)
   // ========================
   const revealElements = document.querySelectorAll(".reveal-left, .reveal-right");

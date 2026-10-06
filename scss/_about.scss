@@ -2,117 +2,55 @@
   padding: 120px 0;
   background: transparent;
 
-  .about-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 4rem;
+  .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 2rem;
-
-    @media (max-width: 900px) {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      text-align: center;
-    }
-  }
-
-  .about-text {
-    text-align: left;
-
-    @media (max-width: 900px) {
-      text-align: center;
-    }
+    text-align: center;
   }
 
   .section-title {
-    text-align: left;
+    text-align: center;
     margin-bottom: 1rem;
-
-    @media (max-width: 900px) {
-      text-align: center;
-    }
   }
 
   .section-subtitle {
-    text-align: left;
+    text-align: center;
     margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .about-item {
+    text-align: left;
 
     @media (max-width: 900px) {
       text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  .about-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    margin-top: 2rem;
-
-    @media (max-width: 900px) {
-      justify-content: center;
     }
 
-    .stat {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.375rem;
-
-      @media (max-width: 900px) {
-        align-items: center;
-      }
-
-      h3 {
-        font-family: $font-display;
-        font-weight: 800;
-        font-size: 3rem;
-        color: $text-light;
-        line-height: 1;
-      }
-
-      p {
-        font-family: $font-mono;
-        font-size: 0.75rem;
-        font-weight: 500;
-        color: $primary-1;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-    }
-  }
-}
-
-.about-visual {
-  display: flex;
-  justify-content: center;
-
-  .about-box {
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-    border: 1px solid $primary-1;
-    border-radius: $radius-lg;
-    position: relative;
-    box-shadow: $shadow-glow;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: $radius-lg;
-      background: linear-gradient(135deg, $primary-1, transparent 60%);
-      opacity: 0.3;
-      filter: blur(20px);
-      z-index: -1;
+    h3 {
+      font-family: $font-display;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: $text-light;
+      margin-bottom: 0.75rem;
     }
 
-    @media (max-width: 900px) {
-      max-width: 200px;
-      height: 200px;
+    p {
+      font-size: 0.9375rem;
+      color: $text-muted;
+      line-height: 1.6;
     }
   }
 }

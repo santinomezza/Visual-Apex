@@ -49,13 +49,6 @@
     color: $text-light;
     margin-bottom: 1.5rem;
     max-width: 16ch;
-
-    .highlight {
-      background: $primary-gradient;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
   }
 
   .hero-subtitle {
@@ -74,7 +67,6 @@
   .hero-ctas {
     display: flex;
     gap: 1rem;
-    margin-bottom: 3rem;
     flex-wrap: wrap;
 
     @media (max-width: 1023px) {
@@ -111,61 +103,6 @@
       box-shadow: 0 8px 30px rgba(0, 200, 83, 0.45);
     }
   }
-
-  .btn-secondary {
-    background: transparent;
-    color: $text-light;
-    border: 1px solid $card-border;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-  }
-
-  .hero-trust {
-    opacity: 0.6;
-
-    @media (max-width: 640px) {
-      display: none;
-    }
-  }
-
-  .trust-label {
-    font-family: $font-mono;
-    font-size: 0.625rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: $text-dim;
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .trust-logos {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    opacity: 0.4;
-    filter: grayscale(1);
-    transition: $transition-fast;
-
-    &:hover {
-      opacity: 0.7;
-      filter: grayscale(0);
-    }
-
-    @media (max-width: 1023px) {
-      justify-content: center;
-    }
-  }
-
-  .trust-logo {
-    width: 100px;
-    height: 32px;
-    color: $text-muted;
-  }
 }
 
 .hero-visual {
@@ -179,125 +116,168 @@
   }
 }
 
-.visual-card {
+.geo-scene {
   position: relative;
-  z-index: 2;
   width: 100%;
   max-width: 520px;
+  aspect-ratio: 4/3;
+}
+
+.geo-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  border: 1px solid $card-border;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+}
+
+.geo-node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: $primary-1;
+  box-shadow: 0 0 20px rgba(0, 200, 83, 0.4);
+
+  &--1 {
+    top: 20%;
+    left: 30%;
+  }
+
+  &--2 {
+    top: 60%;
+    left: 70%;
+  }
+
+  &--3 {
+    top: 75%;
+    left: 25%;
+  }
+}
+
+.geo-line {
+  position: absolute;
+  background: $card-border;
+
+  &--h {
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+
+  &--v {
+    top: 10%;
+    left: 50%;
+    width: 1px;
+    height: 80%;
+    transform: translateX(-50%);
+  }
+}
+
+.geo-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
   background: $card-bg;
   border: 1px solid $card-border;
-  border-radius: $radius-lg;
+  border-radius: $radius-md;
   overflow: hidden;
-  box-shadow: $shadow-md, $shadow-glow;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 
-.visual-card-header {
-  padding: 1rem 1.25rem;
+.geo-panel-header {
+  padding: 0.75rem 1rem;
   background: rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid $card-border;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.window-dots {
-  display: flex;
   gap: 0.375rem;
-
-  span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: $card-border;
-
-    &:nth-child(1) { background: #ff5f57; }
-    &:nth-child(2) { background: #febc2e; }
-    &:nth-child(3) { background: #28ca42; }
-  }
 }
 
-.visual-card-content {
-  padding: 1.5rem;
-  font-family: $font-mono;
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: $text-light;
+.geo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: $card-border;
+
+  &:nth-child(1) { background: #ff5f57; }
+  &:nth-child(2) { background: #febc2e; }
+  &:nth-child(3) { background: #28ca42; }
 }
 
-.code-lines {
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.code-line {
-  padding: 0.125rem 0;
-
-  &.indent {
-    padding-left: 1.5rem;
-  }
-}
-
-.code-keyword { color: #c678dd; }
-.code-function { color: #61afef; }
-.code-property { color: #e06c75; }
-.code-string { color: #98c379; }
-
-.metrics-preview {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid $card-border;
-}
-
-.metric {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  text-align: center;
-}
-
-.metric-value {
-  font-family: $font-display;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: $text-light;
-  line-height: 1;
-}
-
-.metric-suffix {
+.geo-panel-body {
+  padding: 1.25rem;
   font-family: $font-mono;
   font-size: 0.75rem;
-  color: $text-dim;
-}
-
-.metric-label {
-  font-family: $font-body;
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  line-height: 1.8;
   color: $text-muted;
 }
 
-.grid-overlay {
-  position: absolute;
-  inset: -20%;
-  background-image:
-    linear-gradient(to right, rgba(0, 200, 83, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 200, 83, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 1;
-  animation: gridMove 20s linear infinite;
+.geo-row {
+  padding: 0.125rem 0;
+
+  &.indent {
+    padding-left: 1.25rem;
+  }
 }
 
-@keyframes gridMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 60px 60px; }
+.geo-key { color: #c678dd; }
+.geo-type { color: #4ec9b0; }
+.geo-prop { color: #e06c75; }
+.geo-str { color: #98c379; }
+
+.metrics-strip {
+  padding: 3rem 0;
+  border-top: 1px solid $card-border;
+  border-bottom: 1px solid $card-border;
+  background: rgba(10, 10, 10, 0.4);
+
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  .metric-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  .metric-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $primary-1;
+    flex-shrink: 0;
+  }
+
+  .metric-text {
+    font-family: $font-display;
+    font-weight: 600;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: $text-light;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
